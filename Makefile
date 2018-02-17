@@ -5,6 +5,9 @@ BIN = ./node_modules/.bin
 dev:
 	$(BIN)/nodemon ./app/server
 
+lint:
+	$(BIN)/standard
+
 clean:
 	rm -rf ./app/dist
 
@@ -14,7 +17,7 @@ build:
 start:
 	NODE_ENV=production node ./app/server
 
-deploy-production:
+deploy-production: lint
 	now deploy --public
 	now alias
 	now remove tommy-kwan --safe --yes

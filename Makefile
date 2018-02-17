@@ -1,13 +1,23 @@
-.PHONY: build release
+BIN = ./node_modules/.bin
+
+.PHONY: dev clean build start deploy-production deploy-staging
+
+dev:
+	$(BIN)/nodemon ./app/server
+
+clean:
+	rm -rf ./app/dist
 
 build:
-	rm -rf dist
-	jetpack build
-	cp ./src/index.html ./dist/index.html
+	NODE_ENV=production $(BIN)/webpack
 
-release: build
-	cp ./now.json ./dist/now.json
-	cd dist && now deploy --public
+start:
+	NODE_ENV=production node ./app/server
+
+deploy-production:
+	now deploy --public
 	now alias
 	now remove tommy-kwan --safe --yes
-	rm -f ./dist/now.json
+
+deploy-staging:
+	now deploy --public

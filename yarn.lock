@@ -1131,6 +1131,15 @@ console-browserify@^1.1.0:
   dependencies:
     date-now "^0.1.4"
 
+console-chat@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/console-chat/-/console-chat-0.0.1.tgz#9d05db5ac4ba20e358cda2cb3443a03bce3679b3"
+  dependencies:
+    lodash "^4.17.4"
+    node-telegram-bot-api "^0.30.0"
+    socket.io "^2.0.4"
+    socket.io-client "^2.0.4"
+
 console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
@@ -3442,7 +3451,7 @@ socket.io-adapter@~1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/socket.io-adapter/-/socket.io-adapter-1.1.1.tgz#2a805e8a14d6372124dd9159ad4502f8cb07f06b"
 
-socket.io-client@2.0.4:
+socket.io-client@2.0.4, socket.io-client@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-2.0.4.tgz#0918a552406dc5e540b380dcd97afc4a64332f8e"
   dependencies:

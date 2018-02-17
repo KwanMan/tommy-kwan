@@ -1,5 +1,9 @@
 {
   "name": "tommy-kwan",
   "alias": "tommy-kwan",
-  "type": "static"
+  "type": "docker",
+  "env": {
+    "BOT_TOKEN": "@telegram-bot-token",
+    "CHAT_ID": "@telegram-chat-id"
+  }
 }

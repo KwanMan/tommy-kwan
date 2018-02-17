@@ -9,8 +9,6 @@ const dev = require('./dev')
 const app = express()
 const server = http.Server(app)
 
-console.log(config)
-
 createChat(server)
 
 dev(app)

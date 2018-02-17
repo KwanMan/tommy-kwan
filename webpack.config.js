@@ -1,7 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const OptimizeJsPlugin = require('optimize-js-plugin')
 
 const { env, isDevelopment } = require('./app/lib/env')
 
@@ -14,7 +12,7 @@ const config = {
   output: {
     publicPath: '/assets/',
     path: path.resolve(__dirname, 'app/assets'),
-    filename: isDevelopment ? 'bundle.js' : 'bundle.[hash].js'
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -39,11 +37,6 @@ if (isDevelopment) {
   config.plugins = config.plugins.concat([
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-  ])
-} else {
-  config.plugins = config.plugins.concat([
-    new UglifyJsPlugin(),
-    new OptimizeJsPlugin({ sourceMap: false })
   ])
 }
 

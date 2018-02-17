@@ -1,16 +1,46 @@
 import React from 'react'
-import { Container } from 'react-flexboxgrid2'
+import { css } from 'emotion'
 
-import Home from './pages/Home'
-import Projects from './pages/Projects'
+const createClassName = (height) => {
+  return css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: ${height}px;
+  `
+}
 
-export default function App () {
-  return (
-    <div>
+export default class App extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      height: window.innerHeight
+    }
 
-      <Container>
-        <Projects />
-      </Container>
-    </div>
-  )
+    this.handleResize = this.handleResize.bind(this)
+  }
+
+  componentDidMount () {
+    window.addEventListener('resize', this.handleResize)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  render () {
+    return (
+      <div className={createClassName(this.state.height)}>
+        Tommy Kwan
+      </div>
+    )
+  }
+
+  handleResize () {
+    const { height } = this.state
+    const newHeight = window.innerHeight
+    if (height !== newHeight) {
+      this.setState({ height: newHeight })
+    }
+  }
 }

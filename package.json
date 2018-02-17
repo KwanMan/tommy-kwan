@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "config": "^1.29.2",
-    "console-chat": "^0.0.1",
+    "console-chat": "^0.0.2",
     "emotion": "^9.0.1",
     "express": "^4.16.2",
     "js-yaml": "^3.10.0",
@@ -23,6 +23,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "nodemon": "^1.15.0",
     "webpack": "^3.10.0",
     "webpack-dev-middleware": "^2.0.4",
     "webpack-hot-middleware": "^2.21.0"

@@ -10,8 +10,8 @@ const config = {
     './app/client/index'
   ],
   output: {
-    publicPath: '/assets/',
-    path: path.resolve(__dirname, 'app/assets'),
+    publicPath: '/dist/',
+    path: path.resolve(__dirname, 'app/dist'),
     filename: 'bundle.js'
   },
   module: {

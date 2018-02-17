@@ -2,6 +2,9 @@ BIN = ./node_modules/.bin
 
 .PHONY: build start deploy
 
+dev:
+	$(BIN)/nodemon ./app/server
+
 build:
 	NODE_ENV=production $(BIN)/webpack
 
